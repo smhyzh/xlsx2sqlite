@@ -36,7 +36,7 @@ class XlsxToSqlite():
         except RuntimeError:
             print('not found table items.\nconvert to sqlite failed!')
         
-        items_list = [ item.value for item in xhdr.getLine(item_index)]
+        items_list = [ item for item in xhdr.getLine(item_index)]
 
         mdbs = MyDateBase(sqlite_db_path)
         with mdbs as mdb:
